@@ -1,2 +1,4 @@
 download
-base/data
+base/preliminary/data
+base/liner_nn/data
+torch/data
