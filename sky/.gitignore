@@ -1,4 +1,7 @@
 download
 base/preliminary/data
-base/liner_nn/data
+base/linear_nn/data
 torch/data
+torch/__pycache__
+torch/logs
+torch/runs
