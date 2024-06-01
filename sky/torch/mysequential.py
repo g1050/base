@@ -30,10 +30,11 @@ class Cifar10(nn.Module):
     def forward(self,x):
         return self.model1(x)
 
-input = torch.ones((64,3,32,32))
-model = Cifar10()
-output = model(input)
-print(output.shape)
+def main():
+    input = torch.ones((64,3,32,32))
+    model = Cifar10()
+    output = model(input)
+    print(output.shape)
 
 # tensorboard 可视化网络结构 
 # writer.add_graph(model,input)

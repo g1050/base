@@ -5,8 +5,8 @@ from torchvision import transforms
 from d2l import torch as d2l
 
 trans = transforms.ToTensor()
-mnist_train = torchvision.datasets.FashionMNIST(root="data",train=True,transform=trans,download=True)
-mnist_test = torchvision.datasets.FashionMNIST(root="data",train=True,transform=trans,download=True)
+mnist_train = torchvision.datasets.FashionMNIST(root="../../download",train=True,transform=trans,download=True)
+mnist_test = torchvision.datasets.FashionMNIST(root="../../download",train=True,transform=trans,download=True)
 
 def get_label(labels):
     text_labels = ['t-shirt','trouser','pullover','dress','coat',
