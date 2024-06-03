@@ -14,6 +14,10 @@ print(vgg16_true)
 # vgg16_true.add_module("add_linear",nn.Linear(1000,10))
 vgg16_true.classifier.add_module("add_linear",nn.Linear(1000,10))
 print(vgg16_true)
+path = "data/vgg16_false.pth"
+torch.save(vgg16_false,path)
+model_load = torch.load(path)
+print(model_load)
 
 # 修改
 vgg16_false.classifier[6] = nn.Linear(4096,10)

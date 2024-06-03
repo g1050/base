@@ -11,24 +11,35 @@ os.environ['TORCH_HOME'] = os.path.realpath('../download')
 vgg16_false = torchvision.models.vgg16(pretrained=False) # 只有结构,使用的是未经过训练的初始化参数
 
 # 1 保存结构和参数
+print("-"*20)
 path = "data/vgg16_false.pth"
-torch.save(vgg16_false,path)
+# torch.save(vgg16_false,path)
 model_load = torch.load(path)
 print(model_load)
 
+print("-"*20)
 # 2 只保存参数，以字典格式,**官方推荐
 path = "data/vgg16_false_dict.pth"
-torch.save(vgg16_false.state_dict(),path)
+# torch.save(vgg16_false.state_dict(),path)
 model_load_dict = torch.load(path)
 print(model_load_dict) # 只有参数字典
+print("-"*20)
 model_load_dict = torchvision.models.vgg16()
 model_load_dict.load_state_dict(torch.load(path))
 print(model_load_dict) # 结构+参数
+print("-"*20)
 
+
+# # 创建输入张量
+dummy_input = torch.randn(1, 3, 224, 224)
+# 导出模型为ONNX格式
+torch.onnx.export(model_load_dict, dummy_input, "vgg16_false.onnx",
+                  input_names=['input'], output_names=['output'],
+                  opset_version=11)
 # 陷阱:
-path = "data/cifar10.pth"
-cifar = Cifar10()
-print(cifar)
-torch.save(cifar,path)
-model = torch.load(path)
-print(model)
+# path = "data/cifar10.pth"
+# cifar = Cifar10()
+# print(cifar)
+# torch.save(cifar,path)
+# model = torch.load(path)
+# print(model)
