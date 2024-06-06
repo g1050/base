@@ -15,7 +15,8 @@ def get_label(labels):
 print(f"train lenth {len(mnist_train)} test length {len(mnist_test)}")
 # 通道1，28x28的灰度图 label 0-9 10个类别
 print(f"img shape {mnist_train[0][0].shape} label {mnist_train[0][1],get_label([mnist_train[0][1]])}")
-
+# mnist_train[0][0] 表示torch.Tensor
+# mnist_train[0][1] 表示标注
 # 可视化
 def show_image(img,label):
     d2l.plt.imshow(img,cmap='gray',vmin=0,vmax=255)
@@ -35,7 +36,6 @@ for x,y in train_iter:
     print(f"x {x.shape} y {y[0]}") # x的shape N,C,H,W
     break
 print(f"time {timer.stop()}sec")
-
-
+# 数据读取要比训练快，不能让读取数据成为性能瓶颈
 
     
