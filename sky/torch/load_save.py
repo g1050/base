@@ -30,12 +30,7 @@ print(model_load_dict) # 结构+参数
 print("-"*20)
 
 
-# # 创建输入张量
-dummy_input = torch.randn(1, 3, 224, 224)
-# 导出模型为ONNX格式
-torch.onnx.export(model_load_dict, dummy_input, "vgg16_false.onnx",
-                  input_names=['input'], output_names=['output'],
-                  opset_version=11)
+
 # 陷阱:
 # path = "data/cifar10.pth"
 # cifar = Cifar10()
