@@ -9,3 +9,8 @@ script/om
 script/fusion_result.json
 base/4_mlp/runs/
 base/data
+base/6_conv_base/*.onnx
+base/6_conv_base/*.pth
+base/7_conv_modern/*.onnx
+base/7_conv_modern/*.pth
+base/7_conv_modern/__pycache__/
