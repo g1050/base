@@ -21,7 +21,7 @@ class LeNet(nn.Module):
         #     print(y.shape)
         return self.net(x)
 ```
-LeNet （卷积+激活+池化）\*2 (线性层+激活)\*3
+LeNet （卷积+激活+池化）\*2 (线性层+激活)\*3  
 2. shape infer
 ```
 LeNet(
@@ -104,7 +104,7 @@ AlexNet标志着新一轮的神经网络的热潮的开始，提取特征从传�
   )
 )
 ```
-2. shape infer
+2. shape infer  
 输入示例采用224  
 ```  
 Conv2d(1, 96, kernel_size=(11, 11), stride=(4, 4), padding=(1, 1))
