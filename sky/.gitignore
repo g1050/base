@@ -14,3 +14,6 @@ base/6_conv_base/*.pth
 base/7_conv_modern/*.onnx
 base/7_conv_modern/*.pth
 base/7_conv_modern/__pycache__/
+yolo_world/download
+DINO/GroundingDINO
+DINO/groundingdino_swint_ogc.pth
