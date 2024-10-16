@@ -41,3 +41,63 @@ Fast R-CNN
 Faster R-CNN，使用了RPN网络  
 YOLO 45fps、63.4mAP  
 
+## voc2012
+xml标注格式  
+```
+<annotation>
+	<folder>VOC2012</folder>#图片所在的文件夹
+	<filename>2007_000033.jpg</filename>#所对应的图片名称
+	<source>
+		<database>The VOC2007 Database</database>
+		<annotation>PASCAL VOC2007</annotation>
+		<image>flickr</image>#来自网络分享
+	</source>
+	<size>#尺寸
+		<width>500</width>
+		<height>366</height>
+		<depth>3</depth>
+	</size>
+	<segmented>1</segmented>#是否被分割过，1是被分割过，没有就是0
+	<object>#目标1
+		<name>aeroplane</name>#类别
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>#目标是否被截断
+		<difficult>0</difficult>#目标检测的难易程度，1为难检测，0为容易检测
+		<bndbox>#目标的左上角和右下角坐标
+			<xmin>9</xmin>
+			<ymin>107</ymin>
+			<xmax>499</xmax>
+			<ymax>263</ymax>
+		</bndbox>
+	</object>
+	<object>#目标2
+		<name>aeroplane</name>
+		<pose>Left</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>421</xmin>
+			<ymin>200</ymin>
+			<xmax>482</xmax>
+			<ymax>226</ymax>
+		</bndbox>
+	</object>
+	<object>#目标3
+		<name>aeroplane</name>
+		<pose>Left</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>325</xmin>
+			<ymin>188</ymin>
+			<xmax>411</xmax>
+			<ymax>223</ymax>
+		</bndbox>
+	</object>
+</annotation>
+```
+
+## 训练过程
+1. 构造训练集 img.label
+2. 模型、Loss损失函数、optimizer
+3. forward、backward、step
